@@ -4,7 +4,7 @@ function fetchCountries(name) {
     return fetch(`${baseUrl}/${name}?fields=${searchParams}`)
     .then(response => {
         if(!response.ok){
-            throw Error(statusText);
+            throw Error(response.statusText);
         } 
         return response.json() })  
 };
